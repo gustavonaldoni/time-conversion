@@ -53,7 +53,7 @@ class TimeTools(TimeToolsUtils):
             final_minutes = seconds / 60
 
             if final_minutes >= 60:
-                final_hours = final_minutes / 60
+                final_hours = int(final_minutes / 60)
                 final_minutes = 0
 
         else:
