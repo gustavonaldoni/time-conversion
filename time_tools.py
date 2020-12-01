@@ -7,7 +7,7 @@ class TimeToolsUtils:
     on the class itself.
     """
 
-    def __format_result(self, result: str) -> str:
+    def format_result(self, result: str) -> str:
         """
         Used to format the result returned
         on the convert_seconds method from TimeTools class.
@@ -70,4 +70,4 @@ class TimeTools(TimeToolsUtils):
 
         res = f'{final_hours}:{final_minutes}:{final_seconds}'
         
-        return self.__format_result(res)
+        return self.format_result(res)
