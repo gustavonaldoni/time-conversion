@@ -1,16 +1,16 @@
-class TimeToolsUtils:
+class TimeFormatter:
     """
     A helper class to the TimeTools class.
 
-    It has some methods used on TimeTools class that
-    need to exist but wouldn't be nice if maintained 
+    It has some methods used to format strings on TimeTools class 
+    that need to exist but wouldn't be nice if maintained 
     on the class itself.
     """
 
-    def format_result(self, result: str) -> str:
+    def format_convert_seconds_result(self, result: str) -> str:
         """
         Used to format the result returned
-        on the convert_seconds method from TimeTools class.
+        on the 'convert_seconds' method from TimeTools class.
 
         -- Parameters:
             result(str): the result to be formatted
@@ -34,7 +34,7 @@ class TimeToolsUtils:
 
         return res
 
-class TimeTools(TimeToolsUtils):
+class TimeTools(TimeFormatter):
     """
     The TimeTools class provides simple, but really useful
     functionalities when working with time, specially convertions
@@ -102,4 +102,4 @@ class TimeTools(TimeToolsUtils):
 
         res = f'{final_hours}:{final_minutes}:{final_seconds}'
         
-        return self.format_result(res)
+        return self.format_convert_seconds_result(res)
