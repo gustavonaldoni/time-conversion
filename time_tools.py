@@ -1,5 +1,24 @@
 class TimeToolsUtils:
-    def __standardize_result(self, result: str) -> str:
+    """
+    A helper class to the TimeTools class.
+
+    It has some methods used on TimeTools class that
+    need to exist but wouldn't be nice if maintained 
+    on the class itself.
+    """
+
+    def __format_result(self, result: str) -> str:
+        """
+        Used to format the result returned
+        on the convert_seconds method from TimeTools class.
+
+        -- Parameters:
+            result(str): the result to be formatted
+
+        -- Return:
+            str: the new result formatted according to the format '00:00:00'
+
+        """
         hours, minutes, seconds = result.split(':')
 
         if len(hours) == 1:
@@ -51,4 +70,4 @@ class TimeTools(TimeToolsUtils):
 
         res = f'{final_hours}:{final_minutes}:{final_seconds}'
         
-        return self.__standardize_result(res)
+        return self.__format_result(res)
