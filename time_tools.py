@@ -35,7 +35,24 @@ class TimeToolsUtils:
         return res
 
 class TimeTools(TimeToolsUtils):
+    """
+    The TimeTools class provides simple, but really useful
+    functionalities when working with time, specially convertions
+
+    """
+
     def calculate_seconds(self, time: str) -> int:
+        """
+        Used to calculate the amount of seconds a given
+        time string in format '00:00:00' has
+
+        -- Parameters:
+            time(str): the time string to calculatethe seconds.
+
+        -- Returns:
+            int: the number of seconds calculated based on user string
+
+        """
         hours, minutes, seconds = time.split(':')
 
         hours = int(hours)
@@ -45,6 +62,21 @@ class TimeTools(TimeToolsUtils):
         return (hours * 60 * 60) + (minutes  * 60) + seconds
 
     def convert_seconds(self, seconds: int) -> str:
+        """
+        Used to convert an amount of seconds into
+        a string in format '00:00:00'
+
+        -- Parameters:
+            seconds(int)
+        
+        -- Returns:
+            None if the 'seconds' argument is not int!
+            str: the string representation of the number of seconds
+
+        """
+        if not isinstance(seconds, int):
+            return None
+
         final_seconds = 0
         final_minutes = 0
         final_hours = 0
